@@ -1,0 +1,19 @@
+Seleção de Elementos: No início do código, você está selecionando os elementos HTML com os quais deseja interagir. Isso é feito usando o método document.querySelector(), que permite selecionar elementos com base em seus seletores CSS.
+
+multiplicationForm: É o formulário HTML que será usado para capturar os dados inseridos pelo usuário.
+numberInput: É o campo de entrada onde o usuário deve inserir o número que ele quer multiplicar.
+multiplicationInput: É o campo de entrada onde o usuário deve inserir o multiplicador.
+multiplicationTable: É o elemento onde a tabela de multiplicação será exibida.
+Função createTable: Esta função é responsável por criar a tabela de multiplicação com base nos números inseridos pelo usuário. Ela recebe dois parâmetros: number (o número que será multiplicado) e multiplicatorNumber (o número pelo qual o número será multiplicado).
+
+multiplicationTable.innerHTML = "": Isso limpa qualquer conteúdo HTML anterior dentro do elemento multiplicationTable.
+O loop for é usado para iterar de 1 até o valor de multiplicatorNumber.
+Para cada iteração do loop, o resultado da multiplicação (number * i) é calculado.
+Em seguida, é criado um novo elemento <div> para representar uma linha na tabela.
+O HTML dentro do <div> é definido usando template literals, onde o número multiplicado (number), o multiplicador (i) e o resultado da multiplicação (result) são inseridos.
+Finalmente, a linha é adicionada à tabela (multiplicationTable.appendChild(row)).
+Evento de Submissão do Formulário: Um evento de escuta é adicionado ao formulário (multiplicationForm) para o evento de submissão. Quando o formulário é submetido, a função de callback é acionada.
+
+e.preventDefault(): Isso previne o comportamento padrão do formulário de ser executado (ou seja, recarregar a página).
+Os valores inseridos nos campos de entrada (numberInput e multiplicationInput) são capturados e convertidos em números usando +.
+Se os valores inseridos forem válidos (ou seja, diferentes de zero), a função createTable é chamada com esses valores.
